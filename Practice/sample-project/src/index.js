@@ -1,0 +1,60 @@
+import React,{useState} from "react";
+import ReactDOM from "react-dom";
+import App from "./component/App.js";
+import MyColor from "./component/MyColor.js";
+// ReactDOM.render(
+//   <App value="Joe" />
+//   ,document.getElementById("root"));
+class Col extends React.Component{
+  instanceVariable="something"
+  constructor(){
+    super();
+    this.state={
+      color:"red"
+    }
+  }
+
+  render(){
+    return <div><h1>this is a {this.instanceVariable} instanceVariable</h1> <p >I am this {this.state.color} color and variable : {this.instanceVariable}</p></div>
+  }
+}
+
+const sample= <h1>Lets try this</h1>
+function Members(props){
+  return <p>{props.people} lives inside house</p>
+}
+function  Home() {
+  const mem=[{id:1,type:"father"},{id:2,type:"Mother"},{id:3,type:"son"}]
+  return <div>
+    <h2>who lives inside me?</h2>
+    {mem.map(mem=>{return <Members key={mem.id} people={mem.type} ></Members>})}
+    </div>
+}
+
+
+function Button(){
+  function BeenClicked(val){
+    return alert("Been clicked by "+val)
+  }
+  return <div>
+    <p onClick={()=>BeenClicked("Joe")}>Click me!</p>
+  </div>
+}
+
+
+
+const container=document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+root.render(
+<div>
+   <App/>
+   <h3>From the adsf sdf</h3>
+   <p>Thisi is another</p>
+   {sample}
+   <Home/>
+   <Col/>
+   <Button/>
+   <MyColor/>
+   
+   </div>
+   );  
