@@ -2,6 +2,10 @@ import React,{useState} from "react";
 import ReactDOM from "react-dom";
 import App from "./component/App.js";
 import MyColor from "./component/MyColor.js";
+import HandlingObjects from "./component/HandlingObjects.js";
+import UseEffectHook from "./component/UseEffectHook.js";
+import ContextHook from "./component/ContextHook.js"
+import UseRefHook from "./component/UseRefHook.js";
 // ReactDOM.render(
 //   <App value="Joe" />
 //   ,document.getElementById("root"));
@@ -55,6 +59,9 @@ root.render(
    <Col/>
    <Button/>
    <MyColor/>
-   
+   <HandlingObjects/>
+   <UseEffectHook/>
+   <ContextHook/>
+   <UseRefHook></UseRefHook>
    </div>
    );  
