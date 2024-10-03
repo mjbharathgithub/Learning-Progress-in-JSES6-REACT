@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "es6-import-export-practice": "file:",
     "react": "16.11.0",
     "react-dom": "16.11.0"
   },

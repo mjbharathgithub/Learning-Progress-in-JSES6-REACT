@@ -1,82 +1,4 @@
-<<<<<<< HEAD
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-
-
-class Parent extends React.Component{
-  constructor(props){
-    super(props);
-
-    this.state={
-      color:"red",
-      show:true
-    }
-  
-  }
-
-  static getDerivedStateFromProps(props,prevState){
-    if(prevState.color==="red"){
-      alert("getDerivedStateFromProps before mounting ",props,prevState);
-      return {color: props.color};
-  }
-  alert("getDerivedStateFromProps after mounting ",props,prevState);
-  return {};
-    
-  }
-
-  componentDidMount(){
-    alert("component have mounted Successfully");
-  }
-
-  changeFavourite=()=> {
-   this.setState({color:"blue"});
-    
-  }
-
-  shouldComponentUpdate(){
-    alert("shouldComponentUpdate is called and returned true");
-    return true;
-  }
-
-  getSnapshotBeforeUpdate(prevProps,prevState){
-    alert("Your previous props is "+prevProps.color+" and state "+prevState.color);
-  }
-
-  componentDidUpdate(prop,state){
-    alert("Component updated successfully and the prop is "+prop.color+" state is "+state.color);
-  }
-
-  deleteHeader=()=>{
-    this.setState({show:false});
-
-  }
-
-  componentWillUnmount(){
-    alert("componentWillUnmount is called ");
-  }
-  render(){
-    {alert("Render method is called successfully");}
-    return <div>
-      <h1>This is the Parent Component</h1>
-      {
-      
-        this.state.show&&<h2>the color is {this.state.color}</h2>
-      
-    }
-      <button onClick={this.changeFavourite}>click</button>
-      <button onClick={this.deleteHeader}>delete</button>
-    </div>
-  }
-}
-
-
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render((<Parent color="Yellow"></Parent>));
-=======
-import React,{useState} from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import App from "./component/App.js";
 import MyColor from "./component/MyColor.js";
@@ -84,6 +6,10 @@ import HandlingObjects from "./component/HandlingObjects.js";
 import UseEffectHook from "./component/UseEffectHook.js";
 import ContextHook from "./component/ContextHook.js"
 import UseRefHook from "./component/UseRefHook.js";
+import UseReducerHook from "./component/UseReducerHook.js";
+import UseMemoHook from "./component/UseMemoHook.js";
+import UseCallbackHook from "./component/UseCallbackHook.js";
+import UsingCustomHook from "./component/UsingCustomHook.js";
 // ReactDOM.render(
 //   <App value="Joe" />
 //   ,document.getElementById("root"));
@@ -92,12 +18,13 @@ class Col extends React.Component{
   constructor(){
     super();
     this.state={
-      color:"red"
+      color:"red",
+      another:"this is another state"
     }
   }
 
   render(){
-    return <div><h1>this is a {this.instanceVariable} instanceVariable</h1> <p >I am this {this.state.color} color and variable : {this.instanceVariable}</p></div>
+    return <div><h1>this is a {this.instanceVariable} instanceVariable</h1> <p >I am this {this.state.color} color and variable : {this.instanceVariable} and {this.state.another}</p></div>
   }
 }
 
@@ -133,14 +60,12 @@ root.render(
    <h3>From the adsf sdf</h3>
    <p>Thisi is another</p>
    {sample}
-   <Home/>
-   <Col/>
-   <Button/>
-   <MyColor/>
-   <HandlingObjects/>
-   <UseEffectHook/>
-   <ContextHook/>
+  
+   <ContextHook prp="this is a prop"/>
    <UseRefHook></UseRefHook>
+   <UseReducerHook/>
+   <UseMemoHook></UseMemoHook>
+   <UseCallbackHook></UseCallbackHook>
+   <UsingCustomHook></UsingCustomHook>
    </div>
    );  
->>>>>>> e0e39a302ae8b5c5e9c7d5be5d1b72c909ad2f86

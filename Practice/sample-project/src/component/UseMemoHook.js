@@ -20,6 +20,7 @@ function UseMemoHook() {
       <h1>Expensive Calculation Result: {result}</h1>
       <button onClick={() => setCount(count + 1)}>Increment Count: {count}</button>
       <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type something" />
+      
     </div>
   );
 }

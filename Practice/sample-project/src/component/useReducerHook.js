@@ -13,7 +13,7 @@ function reducer(state,type){
 
     default:
       alert("error have occured joseph");
-      break;    
+      return state;    
   }
 
 }
